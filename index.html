@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scholarship Starter Pack - Free Sacramento Beta</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..900&family=IBM+Plex+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600,100&family=IBM+Plex+Mono:wght@400;600;700&family=Manrope:wght@400;500&display=swap');
     :root { --ink:#231815; --muted:#685f57; --cream:#fff7e8; --cream2:#f8ead0; --paper:#fffdf8; --red:#7f2119; --red2:#53130f; --gold:#f6bd3b; --gold2:#ffd96f; --teal:#1f6f7a; --line:#ead9b8; --shadow:0 18px 44px rgba(64,32,18,.12); --soft:0 8px 24px rgba(64,32,18,.09); }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
@@ -15,16 +15,16 @@
     .site-top { background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20; }
     .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:78px; }
     .brand { display:flex; align-items:center; gap:12px; color:var(--ink); text-decoration:none; }
-    .brand-mark { width:46px; height:46px; border-radius:8px; display:grid; place-items:center; background:var(--red); color:var(--gold2); font-family:"Bricolage Grotesque", sans-serif; font-weight:900; box-shadow:inset 0 0 0 2px rgba(255,255,255,.1); }
-    .brand-name { display:block; font-family:"Bricolage Grotesque", sans-serif; font-size:1.18rem; line-height:1; font-weight:900; }
+    .brand-mark { width:46px; height:46px; border-radius:8px; display:grid; place-items:center; background:var(--red); color:var(--gold2); font-family:"Fraunces", serif; font-optical-sizing:auto; font-weight:600; box-shadow:inset 0 0 0 2px rgba(255,255,255,.1); }
+    .brand-name { display:block; font-family:"Fraunces", serif; font-optical-sizing:auto; font-size:1.18rem; line-height:1; font-weight:600; }
     .brand-sub { display:block; color:var(--muted); font-size:12px; margin-top:3px; font-weight:700; }
     .top-links { display:flex; align-items:center; gap:20px; }
-    .top-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:900; }
+    .top-links a { color:var(--ink); text-decoration:none; font-family:"Fraunces", serif; font-optical-sizing:auto; font-size:13px; font-weight:600; }
     .top-links .donate { background:var(--gold); color:#17110d; border-radius:8px; padding:12px 16px; box-shadow:var(--soft); }
     .hero { background:linear-gradient(115deg, rgba(83,19,15,.94), rgba(127,33,25,.84) 45%, rgba(246,189,59,.2)), url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=82'); background-size:cover; background-position:center; color:white; }
     .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:34px; align-items:end; min-height:680px; padding-top:96px; padding-bottom:72px; }
     .eyebrow { color:var(--gold2); font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:12px; }
-    h1,h2,h3,h4,.display { font-family:"Bricolage Grotesque", sans-serif; margin:0; line-height:1.03; color:var(--ink); font-weight:900; letter-spacing:0; }
+    h1,h2,h3,h4,.display { font-family:"Fraunces", serif; font-optical-sizing:auto; margin:0; line-height:1.03; color:var(--ink); font-weight:600; letter-spacing:0; }
     h1 { color:white; font-size:clamp(3rem,6.2vw,6.1rem); max-width:12ch; }
     h2 { font-size:clamp(2rem,3.9vw,3.45rem); }
     h3 { font-size:1.35rem; }
@@ -37,7 +37,7 @@
     .pill { display:inline-flex; align-items:center; gap:8px; min-height:32px; border-radius:999px; padding:7px 11px; background:rgba(255,253,248,.14); border:1px solid rgba(255,255,255,.22); color:#fff7e8; font-weight:800; font-size:13px; }
     .pill::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--gold2); }
     .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .btn { border:0; border-radius:8px; background:var(--gold); color:#17110d; font-weight:900; padding:14px 18px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:48px; box-shadow:var(--soft); font-family:"Bricolage Grotesque", sans-serif; }
+    .btn { border:0; border-radius:8px; background:var(--gold); color:#17110d; font-weight:600; padding:14px 18px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:48px; box-shadow:var(--soft); font-family:"Fraunces", serif; font-optical-sizing:auto; }
     .btn:hover { background:var(--gold2); transform:translateY(-1px); }
     .btn.secondary { background:var(--paper); color:var(--red2); border:1px solid var(--line); }
     .btn.ghost { background:transparent; color:var(--red2); box-shadow:none; border:1px solid var(--line); }
@@ -46,14 +46,14 @@
     .hero-card { border-top:8px solid var(--gold); }
     .hero-card h2 { font-size:2rem; }
     .metric { display:grid; gap:4px; padding:16px; background:#fff6dc; border:1px solid #ecd084; border-radius:8px; }
-    .metric strong { font-family:"Bricolage Grotesque", sans-serif; font-size:1.7rem; }
+    .metric strong { font-family:"Fraunces", serif; font-optical-sizing:auto; font-weight:600; font-size:1.7rem; }
     .section { padding:54px 0; }
     .section-head { max-width:760px; margin-bottom:24px; }
     .grid { display:grid; gap:18px; }
     .cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .tabs { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 24px; position:sticky; top:79px; background:rgba(255,247,232,.96); backdrop-filter:blur(10px); padding:12px 0; z-index:12; border-bottom:1px solid var(--line); }
-    .tab,.subtab,.filter-chip { border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:10px 12px; cursor:pointer; font-weight:900; font-family:"Bricolage Grotesque", sans-serif; }
+    .tab,.subtab,.filter-chip { border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:10px 12px; cursor:pointer; font-weight:600; font-family:"Fraunces", serif; font-optical-sizing:auto; }
     .tab.active,.subtab.active,.filter-chip.active { background:var(--red); color:white; border-color:var(--red); }
     .view { padding:28px 0 52px; }
     .hidden { display:none !important; }
