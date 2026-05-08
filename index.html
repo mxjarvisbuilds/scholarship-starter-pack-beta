@@ -16,7 +16,8 @@
     .eyebrow { color:var(--brand2); font-weight:800; text-transform:uppercase; letter-spacing:.08em; font-size:13px; }
     .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(15,36,68,.06); }
     .grid { display:grid; gap:16px; } .cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); } .cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .pill { display:inline-flex; gap:8px; align-items:center; padding:8px 11px; border-radius:999px; background:#eef4ff; color:#183d94; font-weight:700; font-size:13px; margin:4px 6px 4px 0; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+    .pill { display:inline-flex; gap:8px; align-items:center; padding:8px 11px; border-radius:999px; background:#eef4ff; color:#183d94; font-weight:700; font-size:13px; }
     .btn { border:0; border-radius:12px; background:var(--brand); color:white; font-weight:800; padding:13px 16px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:44px; }
     .btn.secondary { background:#edf3ff; color:#1d3c86; border:1px solid #cbd9ff; } .btn.green { background:var(--brand2); }
     label { font-weight:750; font-size:14px; display:block; margin:12px 0 6px; }
@@ -42,8 +43,11 @@
         <div class="eyebrow">Free Sacramento / Placer beta</div>
         <h1>Get a local scholarship starter pack in under 5 minutes.</h1>
         <p class="muted" style="font-size:19px">Answer a short parent-safe intake. We’ll show verified-source scholarship matches, a best-match application plan, and a dashboard you can print or save.</p>
-        <div>
-          <span class="pill">Free beta</span><span class="pill">No account required</span><span class="pill">High school students + families</span><span class="pill">Official-source matches</span>
+        <div class="pill-row" aria-label="Beta trust notes">
+          <span class="pill">Free beta</span>
+          <span class="pill">No account required</span>
+          <span class="pill">High school students + families</span>
+          <span class="pill">Official-source matches</span>
         </div>
         <p style="margin-top:18px"><a href="#intake" class="btn">Start free intake</a> <a href="#demo" class="btn secondary" id="demoLink">See example</a></p>
       </div>
@@ -76,14 +80,14 @@
           <p class="muted">Required fields are limited to what we need for useful local matching. Optional details can refine the results.</p>
           <label>Parent or student email for local dashboard access</label><input name="parentEmail" type="email" required placeholder="parent@example.com" />
           <label>Student first name or initials</label><input name="studentName" required placeholder="Maya or M.P." />
-          <div class="grid cols2"><div><label>Student age</label><input name="studentAge" type="number" min="14" max="18" placeholder="17" required /></div><div><label>Grade</label><select name="grade"><option>12</option><option>11</option><option>10</option><option>9</option><option>College</option></select></div></div>
+          <div class="grid cols2"><div><label>Student age</label><input name="studentAge" type="number" min="14" max="18" placeholder="17" required /></div><div><label>Grade</label><select name="grade"><option>12</option><option>11</option><option>10</option><option>9</option><option>Gap year / Recent graduate</option></select></div></div>
           <div class="grid cols2"><div><label>County / location</label><input name="county" placeholder="Sacramento County" required /></div><div><label>GPA range</label><select name="gpa"><option>Prefer not to say</option><option>4.0+</option><option>3.5-3.9</option><option>3.0-3.49</option><option>2.5-2.99</option></select></div></div>
           <label>Activities, work, service, or responsibilities</label><textarea name="activities" placeholder="Food bank volunteer, tutoring, job, sports, clubs, family responsibilities..."></textarea>
           <label>Intended major / career, if known</label><input name="majorCareer" placeholder="Public health, trades, engineering, undecided..." />
           <label>Optional school name</label><input name="school" placeholder="High school, homeschool/program, or college" />
           <p class="notice" style="margin-top:14px">This tool is for high school students and families. Students under 18 are welcome to use it; reviewing with a parent or guardian is encouraged but not required.</p>
           <button class="btn green" type="submit" style="margin-top:14px;width:100%">Generate free Starter Pack</button>
-          <p class="small muted" style="margin-top:10px">Timing smoke: this form is designed for a realistic parent to finish in about 3–4 minutes on a phone.</p>
+          <p class="small muted" style="margin-top:10px">Most families finish this in about 3–4 minutes on a phone.</p>
         </form>
         <div class="card">
           <h2>Safe by design</h2>
