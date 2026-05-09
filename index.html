@@ -177,7 +177,7 @@
           <div class="eyebrow">Free Sacramento / Placer beta</div>
           <h1>Scholarship Starter Pack</h1>
           <p class="lead">A calm first step for families who want to understand where to begin, what to verify, and how to turn a student’s real story into a focused application plan.</p>
-          <div class="hero-actions"><a href="#intake" class="btn">Begin the free intake</a><a href="#demo" class="btn secondary" id="demoLink">Preview the guidance</a></div>
+          <div class="hero-actions"><a href="#intake" class="btn">Begin the free intake</a><a href="#different" class="btn secondary">Preview the guidance</a></div>
           <div class="trust-line" aria-label="Beta trust notes"><span>Free beta</span><span>Sacramento / Placer focus</span><span>Official-source verification reminders</span><span>No outcome guarantees</span></div>
         </div>
         <div class="hero-note">
@@ -391,7 +391,7 @@
       if(params.get('debug') === 'true') $('#debugTab').classList.remove('hidden');
       const saved = ScholarshipStarter.loadLocal('ssp_report'); if(saved){ report=saved; }
       renderAll();
-      document.addEventListener('click', (e)=>{ const tab=e.target.closest('[data-view]'); if(tab){ e.preventDefault(); switchView(tab.dataset.view); return; } const demo=e.target.closest('#demoLink,[href="#demo"]'); if(demo){ e.preventDefault(); loadDemo(); } });
+      document.addEventListener('click', (e)=>{ const tab=e.target.closest('[data-view]'); if(tab){ e.preventDefault(); switchView(tab.dataset.view); return; } const demo=e.target.closest('[href="#demo"]'); if(demo){ e.preventDefault(); loadDemo(); } });
       $('#intakeForm').addEventListener('submit',(e)=>{ e.preventDefault(); createReport(formToStudent()); dashboardTab='top'; switchView('report'); });
       $('#waitlistBtn')?.addEventListener('click',()=>{ const email=$('#mockEmail')?.value.trim() || ''; const intent=ScholarshipStarter.createUpgradeIntent('paid-dashboard', email); ScholarshipStarter.saveLocal('ssp_waitlist_intent', intent); if($('#waitlistMsg')) $('#waitlistMsg').textContent='Saved locally for future-account interest. No payment was requested or processed.'; track('waitlist_joined',{emailPresent:!!email}); });
       const initial=location.hash.replace('#',''); switchView(initial || (params.get('debug') === 'true' ? 'debug' : 'intake'));
