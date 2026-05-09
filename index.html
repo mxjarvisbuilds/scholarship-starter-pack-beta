@@ -150,7 +150,25 @@
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
     @media (max-width: 980px) { .chapter-kicker,.image-ledger,.process-band { grid-template-columns:1fr; } .process-step { border-right:0; border-bottom:1px solid var(--line); } .process-step:last-child { border-bottom:0; } .cinema-frame { min-height:500px; } .hero { background-position:56% top; } .cinema-copy { padding:34px; } .editorial-note { grid-template-columns:1fr; gap:12px; } .site-top { position:static; background:#fffefa; } .topbar { min-height:auto; align-items:flex-start; flex-direction:column; } .brand,.top-links { box-shadow:none; border-color:var(--line); } .top-links { width:100%; overflow:visible; flex-wrap:wrap; border-radius:20px; } .hero { min-height:auto; } .hero .wrap { padding-top:76px; } .hero-grid,.editorial-split,.editorial-split.reverse,.onboarding,.story-row,.cols2,.cols3,.cols4,.footer-grid { grid-template-columns:1fr; } .hero-grid { gap:36px; } .photo-panel { min-height:430px; } .tabs { position:static; top:auto; margin-top:0; } .view,#intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:24px; } .meta-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .story-row { gap:10px; } }
     @media (max-width: 620px) { .cinema-section { padding:82px 0 72px; } .hero { background-position:58% top; } .cinema-frame { min-height:420px; } .cinema-copy { padding:26px; } .wrap { padding:22px 16px; } h1 { font-size:3.5rem; max-width:10ch; } h2 { font-size:2.25rem; } .hero .wrap { padding-top:54px; padding-bottom:48px; } .hero-actions { margin-top:24px; } .trust-line { gap:10px; display:grid; } .section { padding:72px 0; } .photo-panel { min-height:360px; } .btn { min-height:46px; padding:12px 17px; } input,select,textarea { font-size:16px; } .panel,.card,.quiet-panel { padding:22px; } .top-links { gap:4px; } .top-links a { padding:9px 10px; font-size:12px; } .meta-row { grid-template-columns:1fr; } .sch-top { display:grid; } }
-    @media print { .tabs,.dashboard-tabs,.filter-row,.no-print,.btn,header,.photo-panel { display:none!important; } body { background:white; } .card,.panel,.quiet-panel { box-shadow:none; break-inside:avoid; } a { color:#102033; } footer { display:none; } }
+    @media print {
+      @page { margin: 0.55in; }
+      .site-top,.hero,main > .section,.tabs,.dashboard-tabs,.filter-row,.no-print,.btn,footer,.photo-panel,.image-ledger,.cinema-frame,video,iframe { display:none!important; }
+      body { background:white; color:#111; }
+      main.wrap { max-width:none; padding:0; }
+      .view { padding:0!important; scroll-margin-top:0; }
+      #report.view:not(.hidden),#dashboard.view:not(.hidden),#templates.view:not(.hidden) { display:block!important; }
+      .card,.panel,.quiet-panel,.sch-card,.value-note,.meta,.notice { box-shadow:none!important; background:white!important; border-color:#bbb!important; break-inside:avoid; page-break-inside:avoid; }
+      .grid,.cols2,.cols3,.cols4,.meta-row { display:block; }
+      h1,h2,h3,h4 { break-after:avoid; page-break-after:avoid; color:#111!important; letter-spacing:normal!important; }
+      .eyebrow { color:#333!important; letter-spacing:.08em!important; }
+      a { color:#102033; text-decoration:underline; }
+      a[href]::after { content:""; }
+      select,input,textarea { appearance:none!important; -webkit-appearance:none!important; border:0!important; background:transparent!important; padding:0!important; box-shadow:none!important; }
+      select { font-weight:700; color:#111; }
+      .sch-top { align-items:start; }
+      .statusSelect { min-width:110px; text-align:right; }
+      .tag { border:1px solid #aaa; color:#111; background:white; }
+    }
   </style>
 </head>
 <body>
@@ -237,12 +255,12 @@
           <p class="muted">No account is required. Your answers stay in this browser during the beta.</p>
           <label>Parent or student email for local dashboard access</label><input name="parentEmail" type="email" required placeholder="parent@example.com" />
           <label>Student first name or initials</label><input name="studentName" required placeholder="Maya or M.P." />
-          <div class="grid cols2"><div><label>Student age</label><input name="studentAge" type="number" min="14" max="18" placeholder="17" required /></div><div><label>Grade</label><select name="grade"><option>12</option><option>11</option><option>10</option><option>9</option><option>Gap year / Recent graduate</option></select></div></div>
+          <div class="grid cols2"><div><label>Student age</label><input name="studentAge" type="number" min="14" max="25" placeholder="17" required /></div><div><label>Grade</label><select name="grade"><option>12</option><option>11</option><option>10</option><option>9</option><option>Gap year / Recent graduate</option></select></div></div>
           <div class="grid cols2"><div><label>County / location</label><input name="county" placeholder="Sacramento County" required /></div><div><label>GPA range</label><select name="gpa"><option>Prefer not to say</option><option>4.0+</option><option>3.5-3.9</option><option>3.0-3.49</option><option>2.5-2.99</option></select></div></div>
           <label>Activities, work, service, or responsibilities</label><p class="field-note">Include anything that shows commitment: volunteer work, church leadership, sports, clubs, student leadership, family responsibilities, paid work, or community involvement.</p><textarea name="activities" placeholder="Food bank volunteer, club officer, choir, part-time job, sports, helping care for siblings..."></textarea>
           <label>Intended major / career, if known</label><p class="field-note">College, trade school, skilled trades, vocational programs, and apprenticeships all count.</p><input name="majorCareer" placeholder="Nursing, public health, welding, HVAC, cosmetology, electrician, undecided..." />
           <label>School Name</label><input name="school" placeholder="High school, homeschool/program, or college" />
-          <p class="notice" style="margin-top:14px">This tool is for high school students and families. Students under 18 are welcome to use it; reviewing with a parent or guardian is encouraged but not required.</p>
+          <p class="notice" style="margin-top:14px">This tool is for high school students, recent graduates, gap-year students, and families. Students under 18 are welcome to use it; reviewing with a parent or guardian is encouraged but not required.</p>
           <button class="btn green" type="submit" style="margin-top:14px;width:100%">Generate free Starter Pack</button>
         </form>
         <div class="grid">
@@ -305,7 +323,7 @@
     function fillForm(data){ Object.entries(data).forEach(([k,v])=>{ const el=$(`[name="${k}"]`); if(el) el.value=v; }); }
     function setActive(id){ $$('.view').forEach(v=>v.classList.toggle('hidden', v.id!==id)); $$('.tab').forEach(t=>t.classList.toggle('active', t.dataset.view===id)); }
     function switchView(id){ if(id==='demo'){ loadDemo(); return; } if(!$('#'+id)) id='intake'; if(id==='debug') $('#debugTab').classList.remove('hidden'); setActive(id); const targetUrl = id === 'intake' ? (location.pathname + location.search) : '#'+id; if(id === 'intake'){ if(location.hash) history.replaceState(null, '', targetUrl); } else if(location.hash !== '#'+id) history.replaceState(null, '', targetUrl); if(id==='report' && report) track('report_viewed', { totalFound: report.discovery.totalFound, freeBeta: true }); if(id==='dashboard' && report) track('dashboard_viewed', { totalFound: report.discovery.totalFound }); }
-    function valueBlock(){ if(!report) return ''; return `<div class="value-note"><h3>Estimated total award value across your matches: ${esc(report.estimatedValue.label)}</h3><p class="muted">${esc(report.disclaimer)}</p></div>`; }
+    function valueBlock(){ if(!report) return ''; return `<div class="value-note"><p class="muted"><b>Important:</b> ${esc(report.disclaimer)}</p><h3>Estimated award range across curated local/core matches: ${esc(report.estimatedValue.label)}</h3><p class="small muted">This estimate excludes wider-database leads until a family verifies fit, deadline, and official source details.</p></div>`; }
     function scholarshipCard(item, mode='top'){
       const action = mode === 'top' ? 'View full plan' : 'Learn more & apply';
       const statusOptions = ScholarshipStarter.STATUS_OPTIONS.map(s=>`<option ${item.status===s?'selected':''}>${esc(s)}</option>`).join('');
@@ -313,7 +331,7 @@
         <div class="sch-top"><div><span class="tag">${esc(item.priority || item.scope)}</span><h3>${esc(item.name)}</h3><p class="muted"><b>${esc(item.provider)}</b></p></div><select class="statusSelect" aria-label="Status for ${esc(item.name)}">${statusOptions}</select></div>
         <div class="meta-row"><div class="meta"><span>Education Level</span><b>${esc(item.educationLevel)}</b></div><div class="meta"><span>Amount</span><b>${esc(item.amount || item.awardRange)}</b></div><div class="meta"><span>Deadline</span><b>${esc(item.deadlineUrgency || item.deadline)}</b></div><div class="meta"><span>Status</span><b>${esc(item.status)}</b></div></div>
         <p>${esc(item.description || item.fitRationale).slice(0, 150)}</p>
-        ${mode === 'top' ? `<p><b>Why it fits:</b> ${esc(item.fitRationale)}</p><h4>Checklist</h4>${(item.checklist || []).slice(0,3).map(c=>`<label class="small"><input class="check" type="checkbox" value="${esc(c.label)}" ${c.done?'checked':''} style="width:auto;margin-right:7px">${esc(c.label)}</label>`).join('')}` : `<p class="small muted">Wider Scholarship Database - verify each before applying.</p>`}
+        ${mode === 'top' ? `<p><b>Why it fits:</b> ${esc(item.fitRationale)}</p><h4>Checklist</h4>${(item.checklist || []).slice(0,3).map(c=>`<label class="small"><input class="check" type="checkbox" value="${esc(c.label)}" ${c.done?'checked':''} style="width:auto;margin-right:7px">${esc(c.label)}</label>`).join('')}` : `<p class="small muted">${item.tier === 'A' ? 'Curated local/core match - confirm current deadline on the official page before applying.' : 'Wider Scholarship Database - verify each before applying.'}</p>`}
         <div class="actions"><a class="btn ${mode === 'top' ? '' : 'secondary'}" href="${esc(item.link)}" target="_blank" rel="noreferrer">${action}</a></div>
       </article>`;
     }

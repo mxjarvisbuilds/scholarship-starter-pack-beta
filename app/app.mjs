@@ -185,8 +185,8 @@ function generateReport(student) {
   report.additionalMatches = report.topMatches.slice(3);
   report.browseMatches = report.allMatches;
   report.unlockedCount = report.allMatches.length;
-  const est = valueRange(report.allMatches);
-  report.estimatedValue = { ...est, label: `${money(est.min)} - ${money(est.max)}` };
+  const est = valueRange(report.topMatches);
+  report.estimatedValue = { ...est, label: `${money(est.min)} - ${money(est.max)}`, basis: 'curated local/core matches only' };
   return report;
 }
 function createAccountSession(student) { const email = normalizeText(student.parentEmail || student.email).toLowerCase(); return { email, accountId: email ? `acct_${hashString(email)}` : `acct_demo_${Date.now()}`, sessionId: `sess_${hashString(`${email}|${Date.now()}`)}`, dashboardPath: '#dashboard', mode: 'free_beta_local_access' }; }
