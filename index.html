@@ -5,85 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scholarship Starter Pack - Free Sacramento Beta</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600,100&family=IBM+Plex+Mono:wght@400;600;700&family=Manrope:wght@400;500&display=swap');
-    :root { --ink:#231815; --muted:#685f57; --cream:#fff7e8; --cream2:#f8ead0; --paper:#fffdf8; --red:#7f2119; --red2:#53130f; --gold:#f6bd3b; --gold2:#ffd96f; --teal:#1f6f7a; --line:#ead9b8; --shadow:0 18px 44px rgba(64,32,18,.12); --soft:0 8px 24px rgba(64,32,18,.09); }
+    :root {
+      --ink:#1f2423;
+      --muted:#626a66;
+      --soft:#8a8178;
+      --paper:#fffdf8;
+      --ground:#f6f0e7;
+      --veil:#ebe2d6;
+      --stone:#d8cab9;
+      --line:rgba(31,36,35,.13);
+      --sage:#6f7f72;
+      --sage-dark:#34483d;
+      --clay:#8d3f32;
+      --clay-dark:#5a231d;
+      --gold:#c99a3d;
+      --blue:#405c6c;
+      --shadow:0 28px 80px rgba(50,42,34,.10);
+      --soft-shadow:0 14px 36px rgba(50,42,34,.08);
+      --radius:22px;
+      --radius-sm:14px;
+      --max:1180px;
+    }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Manrope, "General Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; }
-    a { color:var(--red); font-weight:800; }
-    .wrap { max-width:1180px; margin:auto; padding:26px 20px; position:relative; }
-    .site-top { background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20; }
-    .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:78px; }
-    .brand { display:flex; align-items:center; gap:12px; color:var(--ink); text-decoration:none; }
-    .brand-mark { width:46px; height:46px; border-radius:8px; display:grid; place-items:center; background:var(--red); color:var(--gold2); font-family:"Fraunces", serif; font-optical-sizing:auto; font-weight:600; box-shadow:inset 0 0 0 2px rgba(255,255,255,.1); }
-    .brand-name { display:block; font-family:"Fraunces", serif; font-optical-sizing:auto; font-size:1.18rem; line-height:1; font-weight:600; }
-    .brand-sub { display:block; color:var(--muted); font-size:12px; margin-top:3px; font-weight:700; }
-    .top-links { display:flex; align-items:center; gap:20px; }
-    .top-links a { color:var(--ink); text-decoration:none; font-family:"Fraunces", serif; font-optical-sizing:auto; font-size:13px; font-weight:600; }
-    .top-links .donate { background:var(--gold); color:#17110d; border-radius:8px; padding:12px 16px; box-shadow:var(--soft); }
-    .hero { background:linear-gradient(115deg, rgba(83,19,15,.94), rgba(127,33,25,.84) 45%, rgba(246,189,59,.2)), url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=82'); background-size:cover; background-position:center; color:white; }
-    .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:34px; align-items:end; min-height:680px; padding-top:96px; padding-bottom:72px; }
-    .eyebrow { color:var(--gold2); font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:12px; }
-    h1,h2,h3,h4,.display { font-family:"Fraunces", serif; font-optical-sizing:auto; margin:0; line-height:1.03; color:var(--ink); font-weight:600; letter-spacing:0; }
-    h1 { color:white; font-size:clamp(3rem,6.2vw,6.1rem); max-width:12ch; }
-    h2 { font-size:clamp(2rem,3.9vw,3.45rem); }
-    h3 { font-size:1.35rem; }
-    h4 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--red); margin:16px 0 8px; }
+    html { scroll-behavior:smooth; background:var(--ground); }
+    body {
+      margin:0;
+      font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, system-ui, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 2%, rgba(201,154,61,.13), transparent 28rem),
+        linear-gradient(180deg, #fbf7ef 0%, var(--ground) 46%, #f8f4ed 100%);
+      line-height:1.58;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a { color:var(--clay-dark); font-weight:700; text-underline-offset:3px; }
+    .wrap { max-width:var(--max); margin:auto; padding:28px 24px; position:relative; }
+    .site-top {
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,253,248,.78);
+      border-bottom:1px solid rgba(31,36,35,.08);
+      backdrop-filter:saturate(160%) blur(18px);
+    }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:72px; }
+    .brand { display:flex; align-items:center; gap:14px; color:var(--ink); text-decoration:none; }
+    .brand-mark {
+      width:44px; height:44px; border-radius:50%; display:grid; place-items:center;
+      background:linear-gradient(145deg, #fffaf1, #e8dccb);
+      color:var(--clay-dark); border:1px solid rgba(90,35,29,.18);
+      font-family:ui-serif, Georgia, "Times New Roman", serif; font-weight:700; font-size:13px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 10px 24px rgba(31,36,35,.08);
+    }
+    .brand-name { display:block; font-family:ui-serif, Georgia, "Times New Roman", serif; font-size:1.08rem; line-height:1; font-weight:650; letter-spacing:-.01em; }
+    .brand-sub { display:block; color:var(--muted); font-size:12px; margin-top:4px; font-weight:600; }
+    .top-links { display:flex; align-items:center; gap:22px; }
+    .top-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:650; opacity:.82; }
+    .top-links a:hover { opacity:1; }
+    .top-links .donate {
+      border:1px solid rgba(31,36,35,.12); background:var(--ink); color:#fffaf1;
+      border-radius:999px; padding:11px 16px; box-shadow:0 8px 20px rgba(31,36,35,.12); opacity:1;
+    }
+    .hero { overflow:hidden; border-bottom:1px solid rgba(31,36,35,.08); }
+    .hero::before {
+      content:""; position:absolute; inset:78px 0 auto 0; height:640px; pointer-events:none;
+      background:radial-gradient(circle at 82% 18%, rgba(111,127,114,.18), transparent 25rem);
+    }
+    .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) 390px; gap:64px; align-items:end; min-height:690px; padding-top:98px; padding-bottom:78px; }
+    .hero-inner > div:first-child { animation:rise .7s ease both; }
+    .hero-card { animation:rise .8s .08s ease both; }
+    @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .eyebrow { color:var(--clay); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; }
+    h1,h2,h3,h4,.display { font-family:ui-serif, Georgia, "Times New Roman", serif; margin:0; line-height:1.02; color:var(--ink); font-weight:620; letter-spacing:-.035em; }
+    h1 { font-size:clamp(3.4rem,7vw,7rem); max-width:11.4ch; }
+    h2 { font-size:clamp(2rem,4.2vw,4.1rem); }
+    h3 { font-size:1.35rem; letter-spacing:-.025em; }
+    h4 { font-family:inherit; font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; color:var(--clay); margin:18px 0 8px; }
     p { margin:0 0 14px; }
-    .lead { color:#fff6e6; font-size:clamp(1.03rem,1.7vw,1.22rem); max-width:62ch; font-weight:650; }
+    .lead { color:#3f4643; font-size:clamp(1.08rem,1.7vw,1.32rem); max-width:58ch; font-weight:450; margin-top:24px; }
     .muted { color:var(--muted); }
     .small { font-size:13px; }
-    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0; }
-    .pill { display:inline-flex; align-items:center; gap:8px; min-height:32px; border-radius:999px; padding:7px 11px; background:rgba(255,253,248,.14); border:1px solid rgba(255,255,255,.22); color:#fff7e8; font-weight:800; font-size:13px; }
-    .pill::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--gold2); }
+    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin:30px 0; }
+    .pill { display:inline-flex; align-items:center; gap:8px; min-height:34px; border-radius:999px; padding:7px 12px; background:rgba(255,253,248,.72); border:1px solid rgba(31,36,35,.1); color:#414844; font-weight:700; font-size:13px; box-shadow:0 1px 0 rgba(255,255,255,.9); }
+    .pill::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--sage); }
     .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .btn { border:0; border-radius:8px; background:var(--gold); color:#17110d; font-weight:600; padding:14px 18px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:48px; box-shadow:var(--soft); font-family:"Fraunces", serif; font-optical-sizing:auto; }
-    .btn:hover { background:var(--gold2); transform:translateY(-1px); }
-    .btn.secondary { background:var(--paper); color:var(--red2); border:1px solid var(--line); }
-    .btn.ghost { background:transparent; color:var(--red2); box-shadow:none; border:1px solid var(--line); }
-    .btn.green { background:var(--red); color:white; }
-    .panel,.card { background:rgba(255,253,248,.96); border:1px solid var(--line); border-radius:8px; padding:24px; box-shadow:var(--shadow); color:var(--ink); }
-    .hero-card { border-top:8px solid var(--gold); }
-    .hero-card h2 { font-size:2rem; }
-    .metric { display:grid; gap:4px; padding:16px; background:#fff6dc; border:1px solid #ecd084; border-radius:8px; }
-    .metric strong { font-family:"Fraunces", serif; font-optical-sizing:auto; font-weight:600; font-size:1.7rem; }
-    .section { padding:54px 0; }
-    .section-head { max-width:760px; margin-bottom:24px; }
+    .btn { border:0; border-radius:999px; background:var(--ink); color:#fffaf1; font-weight:750; padding:14px 20px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:50px; box-shadow:0 14px 30px rgba(31,36,35,.14); transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+    .btn:hover { transform:translateY(-1px); box-shadow:0 18px 40px rgba(31,36,35,.17); background:#111514; }
+    .btn.secondary,.btn.ghost { background:rgba(255,253,248,.76); color:var(--ink); border:1px solid rgba(31,36,35,.14); box-shadow:none; }
+    .btn.green { background:var(--sage-dark); color:white; }
+    .panel,.card { background:rgba(255,253,248,.84); border:1px solid rgba(31,36,35,.1); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow); color:var(--ink); backdrop-filter:blur(10px); }
+    .hero-card { border:1px solid rgba(31,36,35,.12); background:linear-gradient(180deg, rgba(255,253,248,.92), rgba(247,240,230,.88)); }
+    .hero-card h2 { font-size:2.05rem; margin-top:22px; }
+    .metric { display:grid; gap:6px; padding:20px; background:#fbf4e8; border:1px solid rgba(201,154,61,.28); border-radius:18px; }
+    .metric strong { font-family:ui-serif, Georgia, "Times New Roman", serif; font-weight:620; font-size:1.9rem; letter-spacing:-.03em; }
+    .section { padding:72px 0; }
+    .section-head { max-width:780px; margin-bottom:28px; }
     .grid { display:grid; gap:18px; }
     .cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 24px; position:sticky; top:79px; background:rgba(255,247,232,.96); backdrop-filter:blur(10px); padding:12px 0; z-index:12; border-bottom:1px solid var(--line); }
-    .tab,.subtab,.filter-chip { border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:10px 12px; cursor:pointer; font-weight:600; font-family:"Fraunces", serif; font-optical-sizing:auto; }
-    .tab.active,.subtab.active,.filter-chip.active { background:var(--red); color:white; border-color:var(--red); }
-    .view { padding:28px 0 52px; }
+    .cols4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 22px; position:sticky; top:73px; background:rgba(246,240,231,.82); backdrop-filter:saturate(160%) blur(18px); padding:14px 0; z-index:12; border-bottom:1px solid rgba(31,36,35,.08); }
+    .tab,.subtab,.filter-chip { border:1px solid rgba(31,36,35,.12); background:rgba(255,253,248,.72); color:var(--ink); border-radius:999px; padding:10px 13px; cursor:pointer; font-weight:750; }
+    .tab.active,.subtab.active,.filter-chip.active { background:var(--ink); color:white; border-color:var(--ink); }
+    .view { padding:34px 0 66px; scroll-margin-top:112px; }
+    #intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:112px; }
     .hidden { display:none !important; }
-    label { font-weight:850; font-size:14px; display:block; margin:13px 0 7px; }
-    input,select,textarea { width:100%; border:1px solid #d9c9a8; border-radius:8px; padding:13px 14px; font:inherit; background:#fffdf8; color:var(--ink); }
-    textarea { min-height:96px; resize:vertical; }
+    label { font-weight:750; font-size:14px; display:block; margin:14px 0 7px; }
+    input,select,textarea { width:100%; border:1px solid rgba(31,36,35,.16); border-radius:14px; padding:13px 14px; font:inherit; background:rgba(255,253,248,.88); color:var(--ink); outline:none; transition:border-color .15s ease, box-shadow .15s ease; }
+    input:focus,select:focus,textarea:focus { border-color:rgba(52,72,61,.55); box-shadow:0 0 0 4px rgba(111,127,114,.12); }
+    textarea { min-height:102px; resize:vertical; }
     .field-note { margin:-2px 0 10px; color:var(--muted); font-size:13px; line-height:1.45; }
-    .notice { background:#fff1c7; border:1px solid #e6bd61; border-radius:8px; padding:14px; font-size:14px; color:#4e2a18; }
-    .value-note { border-left:5px solid var(--gold); background:#fff9e9; padding:16px; border-radius:8px; }
-    .progressbar { height:12px; border-radius:999px; background:#e7dcc7; overflow:hidden; }
-    .progressbar span { display:block; height:100%; background:linear-gradient(90deg,var(--red),var(--gold)); }
-    .sch-card { display:grid; gap:12px; transition:transform .15s ease, box-shadow .15s ease; }
-    .sch-card:hover { transform:translateY(-2px); box-shadow:0 18px 44px rgba(64,32,18,.15); }
+    .notice { background:#fbf1dc; border:1px solid rgba(201,154,61,.28); border-radius:16px; padding:14px; font-size:14px; color:#514334; }
+    .value-note { border-left:4px solid var(--sage); background:#f7f4ec; padding:18px; border-radius:18px; }
+    .progressbar { height:10px; border-radius:999px; background:#e2d8c8; overflow:hidden; }
+    .progressbar span { display:block; height:100%; background:linear-gradient(90deg,var(--sage-dark),var(--gold)); }
+    .sch-card { display:grid; gap:12px; transition:transform .18s ease, box-shadow .18s ease; }
+    .sch-card:hover { transform:translateY(-2px); box-shadow:0 24px 60px rgba(50,42,34,.12); }
     .sch-top { display:flex; justify-content:space-between; gap:16px; align-items:start; }
-    .tag { display:inline-flex; width:max-content; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:900; background:#f9e6aa; color:#4e2a18; }
+    .tag { display:inline-flex; width:max-content; border-radius:999px; padding:5px 10px; font-size:12px; font-weight:800; background:#eee5d7; color:var(--sage-dark); }
     .meta-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
-    .meta { border:1px solid var(--line); border-radius:8px; padding:10px; background:#fffaf0; min-width:0; }
-    .meta span { display:block; color:var(--muted); font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.04em; }
+    .meta { border:1px solid rgba(31,36,35,.1); border-radius:14px; padding:10px; background:#fbf8f1; min-width:0; }
+    .meta span { display:block; color:var(--muted); font-size:11px; font-weight:850; text-transform:uppercase; letter-spacing:.04em; }
     .meta b { display:block; font-size:13px; overflow-wrap:anywhere; }
     .dashboard-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
     .filter-row { display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 20px; }
     ul,ol { margin:9px 0 0 20px; padding:0; }
     li { margin:6px 0; }
-    pre { max-height:360px; overflow:auto; background:#f6eedf; border:1px solid var(--line); border-radius:8px; padding:14px; font-family:"IBM Plex Mono", ui-monospace, monospace; }
-    footer { border-top:8px solid var(--gold); color:#f5dfc7; background:#3f3530; }
+    pre { max-height:360px; overflow:auto; background:#f4ecdf; border:1px solid rgba(31,36,35,.1); border-radius:16px; padding:14px; }
+    footer { border-top:1px solid rgba(31,36,35,.1); color:#efe8dd; background:#222725; }
     .footer-grid { display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:24px; }
-    .footer-label { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--gold2); font-weight:900; margin-bottom:7px; }
-    .legal-note { margin-top:22px; padding-top:16px; border-top:1px solid rgba(255,255,255,.18); font-size:12px; color:#dfcbb8; }
-    @media (max-width: 980px) { .topbar { align-items:flex-start; flex-direction:column; } .top-links { width:100%; overflow:auto; padding-bottom:4px; } .hero-inner,.cols2,.cols3,.footer-grid { grid-template-columns:1fr; } .hero-inner { min-height:auto; padding-top:70px; } .tabs { top:0; } .meta-row { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (max-width: 620px) { .wrap { padding:22px 14px; } h1 { font-size:3rem; max-width:12ch; } .panel,.card { padding:18px; } .top-links { gap:12px; } .meta-row { grid-template-columns:1fr; } .sch-top { display:grid; } }
+    .footer-label { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:#d8b56e; font-weight:850; margin-bottom:7px; }
+    .legal-note { margin-top:22px; padding-top:16px; border-top:1px solid rgba(255,255,255,.14); font-size:12px; color:#cfc4b7; }
+    :root { --ink:#17201d; --muted:#66716c; --ground:#f7f3eb; --line:rgba(23,32,29,.12); --sage:#5f746a; --sage-dark:#233c33; --clay:#8b4b3c; --clay-dark:#233c33; --gold:#b88a44; --shadow:0 28px 80px rgba(42,35,27,.09); --radius:8px; }
+    body { background:linear-gradient(180deg,#fffefa 0%,#f7f3eb 58%,#f3eee4 100%); }
+    .site-top { background:rgba(255,254,250,.82); border-bottom:1px solid rgba(23,32,29,.08); }
+    .topbar { min-height:76px; }
+    .brand-mark { border-radius:0; background:rgba(255,254,250,.76); color:var(--sage-dark); box-shadow:none; }
+    .brand-sub { font-weight:500; }
+    .top-links { gap:24px; }
+    .top-links a { font-weight:620; opacity:.72; }
+    .top-links .donate { border-color:var(--ink); background:var(--ink); box-shadow:none; }
+    .hero { border-bottom:1px solid rgba(23,32,29,.08); }
+    .hero::before { display:none; }
+    .hero-inner { grid-template-columns:minmax(0,1fr) 430px; gap:76px; align-items:center; min-height:680px; padding-top:86px; padding-bottom:64px; }
+    .hero-copy { animation:rise .7s ease both; }
+    .hero-visual { animation:rise .85s .06s ease both; min-height:560px; border:1px solid var(--line); background:linear-gradient(180deg,#fdfaf3,#edf2ef); box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .hero-visual::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.72),transparent 42%), linear-gradient(180deg,transparent 0 62%,rgba(35,60,51,.10)); }
+    .campus-line { position:absolute; left:38px; right:38px; bottom:112px; height:1px; background:rgba(23,32,29,.18); }
+    .campus-arch { position:absolute; bottom:113px; width:78px; height:168px; border:1px solid rgba(23,32,29,.18); border-bottom:0; border-radius:45px 45px 0 0; background:rgba(255,254,250,.42); }
+    .campus-arch.one { left:52px; }
+    .campus-arch.two { left:152px; height:214px; }
+    .campus-arch.three { left:252px; }
+    .campus-card { position:absolute; left:38px; right:38px; bottom:32px; padding:24px; background:rgba(255,254,250,.82); border:1px solid rgba(23,32,29,.12); backdrop-filter:blur(10px); }
+    .campus-card h2 { font-size:2rem; }
+    .eyebrow { letter-spacing:.15em; font-weight:760; }
+    h1 { font-size:clamp(4.25rem,8vw,7.8rem); max-width:8.6ch; letter-spacing:-.03em; }
+    h2 { font-size:clamp(2.25rem,4.8vw,4.6rem); }
+    .lead { font-size:clamp(1.13rem,1.7vw,1.36rem); max-width:58ch; font-weight:430; margin-top:26px; color:#3e4844; }
+    .pill { gap:0; border-radius:999px; background:rgba(255,254,250,.72); box-shadow:none; font-weight:650; }
+    .pill::before { display:none; }
+    .btn { box-shadow:0 14px 30px rgba(23,32,29,.12); }
+    .btn.secondary,.btn.ghost { background:rgba(255,254,250,.76); border-color:rgba(23,32,29,.2); }
+    .panel,.card { border-radius:8px; box-shadow:var(--shadow); background:rgba(255,254,250,.82); }
+    .section { padding:84px 0; }
+    .section-head { max-width:820px; margin-bottom:34px; }
+    .storyline { display:grid; gap:0; border-top:1px solid var(--line); }
+    .story-row { display:grid; grid-template-columns:220px minmax(0,1fr); gap:56px; padding:30px 0; border-bottom:1px solid var(--line); }
+    .story-row .eyebrow { color:var(--gold); }
+    .quiet-panel { padding:34px; border:1px solid var(--line); background:rgba(255,254,250,.56); }
+    .onboarding { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:42px; align-items:start; }
+    input,select,textarea,.notice,.value-note,.meta,pre { border-radius:8px; }
+    .tabs { top:77px; background:rgba(247,243,235,.84); }
+    footer { background:#1d2521; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+    @media (max-width: 980px) { .site-top { position:static; } .topbar { align-items:flex-start; flex-direction:column; } .top-links { width:100%; overflow:auto; padding-bottom:4px; } .hero-inner,.onboarding,.story-row,.cols2,.cols3,.cols4,.footer-grid { grid-template-columns:1fr; } .hero-inner { min-height:auto; padding-top:54px; gap:36px; } .hero-visual { min-height:420px; } .tabs { position:static; top:auto; margin-top:0; } .view,#intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:24px; } .meta-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .story-row { gap:10px; } }
+    @media (max-width: 620px) { .wrap { padding:22px 15px; } .hero-inner { padding-top:36px; } h1 { font-size:3.25rem; max-width:11ch; } .btn { min-height:46px; padding:12px 17px; } input,select,textarea { font-size:16px; } .panel,.card { padding:20px; border-radius:18px; } .top-links { gap:12px; } .meta-row { grid-template-columns:1fr; } .sch-top { display:grid; } }
     @media print { .tabs,.dashboard-tabs,.filter-row,.no-print,.btn,header { display:none!important; } body { background:white; } .card,.panel { box-shadow:none; break-inside:avoid; } a { color:#102033; } footer { display:none; } }
   </style>
 </head>
@@ -92,7 +187,7 @@
     <div class="wrap topbar">
       <a class="brand" href="#intake" aria-label="Scholarship Starter Pack">
         <span class="brand-mark">SSP</span>
-        <span><span class="brand-name">Scholarship Starter Pack</span><span class="brand-sub">Guided help for Sacramento families</span></span>
+        <span><span class="brand-name">Scholarship Starter Pack</span><span class="brand-sub">Free local beta for Sacramento and Placer families</span></span>
       </a>
       <div class="top-links" aria-label="Primary navigation">
         <a href="#intake">Intake</a>
@@ -106,23 +201,28 @@
 
   <header class="hero">
     <div class="wrap hero-inner">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">Free Sacramento / Placer beta</div>
-        <h1>Stop drowning in scholarship lists. Apply to the ones that fit.</h1>
-        <p class="lead">We pull together your best-fit local scholarships, prepare one ready-to-apply packet, and walk you through each step. Free for Sacramento and Placer families.</p>
+        <h1>Scholarship Starter Pack</h1>
+        <p class="lead">A calm first step for families who want to understand where to begin, what to verify, and how to turn a student’s real story into a focused application plan.</p>
         <div class="pill-row" aria-label="Beta trust notes">
-          <span class="pill">No account for free packet</span>
-          <span class="pill">Local-first matching</span>
-          <span class="pill">Guided application plan</span>
-          <span class="pill">No award guarantees</span>
+          <span class="pill">Free beta</span>
+          <span class="pill">Sacramento / Placer focus</span>
+          <span class="pill">Official-source verification reminders</span>
+          <span class="pill">No outcome guarantees</span>
         </div>
-        <div class="actions"><a href="#intake" class="btn">Start free intake</a><a href="#demo" class="btn secondary" id="demoLink">See example dashboard</a></div>
+        <div class="actions"><a href="#intake" class="btn">Begin the free intake</a><a href="#demo" class="btn secondary" id="demoLink">Preview the guidance</a></div>
       </div>
-      <div class="panel hero-card">
-        <div class="metric" id="heroAwardTracker"><span class="eyebrow" style="color:#7f2119">Sacramento Beta Awards Tracker</span><strong>$0 awarded so far</strong><span class="muted">Recent shared awards appear here only when a user opts in.</span></div>
-        <div id="heroAwardsFeed" class="grid" style="margin-top:14px"></div>
-        <h2 style="margin-top:18px">TurboTax-style help for scholarships.</h2>
-        <p class="muted">Best Match first, full plan next, wider database when you are ready.</p>
+      <div class="hero-visual" aria-label="A quiet campus-inspired guidance visual">
+        <div class="campus-arch one"></div>
+        <div class="campus-arch two"></div>
+        <div class="campus-arch three"></div>
+        <div class="campus-line"></div>
+        <div class="campus-card">
+          <div class="eyebrow">Guided plan</div>
+          <h2>One best starting point. Clear next steps.</h2>
+          <p class="muted">The beta helps families prepare, organize, and verify before applying through official scholarship portals.</p>
+        </div>
       </div>
     </div>
   </header>
@@ -130,15 +230,14 @@
   <main class="wrap">
     <section class="section" id="different">
       <div class="section-head">
-        <div class="eyebrow" style="color:var(--red)">How this is different</div>
-        <h2>Built to help you actually apply, not just search.</h2>
+        <div class="eyebrow">How it works</div>
+        <h2>Designed around the moment a family decides to start.</h2>
       </div>
-      <div class="grid cols4"></div>
-      <div class="grid cols2">
-        <div class="card"><h3>Right matches, not endless results</h3><p class="muted">Other sites give you huge lists. We give you the right ones, with one already prepared to start tonight.</p></div>
-        <div class="card"><h3>Sacramento and Placer roots</h3><p class="muted">We focus on verified Sacramento-region scholarships first, with a wider database to explore once you are ready.</p></div>
-        <div class="card"><h3>No account needed for free packet</h3><p class="muted">The free intake runs in this browser. Paid account features are waitlist-only and local mockups for now.</p></div>
-        <div class="card"><h3>Execution coaching</h3><p class="muted">Each top match includes rationale, essay direction, documents, checklist, timeline, and status tracking.</p></div>
+      <div class="storyline">
+        <div class="story-row"><div class="eyebrow">01</div><div><h3>Begin with the student’s story</h3><p class="muted">The intake asks for the context that often matters: location, grade, interests, responsibilities, service, work, and possible career direction.</p></div></div>
+        <div class="story-row"><div class="eyebrow">02</div><div><h3>Surface a thoughtful Best Match</h3><p class="muted">The beta prepares one strongest starting point with rationale, document needs, essay direction, and official-source reminders.</p></div></div>
+        <div class="story-row"><div class="eyebrow">03</div><div><h3>Keep the rest organized</h3><p class="muted">Families can review visible beta matches, update statuses, check off tasks, and print the plan for review.</p></div></div>
+        <div class="story-row"><div class="eyebrow">04</div><div><h3>Stay honest about uncertainty</h3><p class="muted">The product helps with preparation. It does not promise awards, eligibility, deadlines, admissions, or financial aid outcomes.</p></div></div>
       </div>
     </section>
 
@@ -152,10 +251,10 @@
     </nav>
 
     <section id="intake" class="view">
-      <div class="grid cols2">
+      <div class="onboarding">
         <form id="intakeForm" class="card">
-          <h2>Free 5-minute intake</h2>
-          <p class="muted">No account is required for the free Starter Pack. Your answers stay in this browser during the beta.</p>
+          <h2>Free guided intake</h2>
+          <p class="muted">No account is required. Your answers stay in this browser during the beta.</p>
           <label>Parent or student email for local dashboard access</label><input name="parentEmail" type="email" required placeholder="parent@example.com" />
           <label>Student first name or initials</label><input name="studentName" required placeholder="Maya or M.P." />
           <div class="grid cols2"><div><label>Student age</label><input name="studentAge" type="number" min="14" max="18" placeholder="17" required /></div><div><label>Grade</label><select name="grade"><option>12</option><option>11</option><option>10</option><option>9</option><option>Gap year / Recent graduate</option></select></div></div>
@@ -167,18 +266,12 @@
           <button class="btn green" type="submit" style="margin-top:14px;width:100%">Generate free Starter Pack</button>
         </form>
         <div class="grid">
-          <div class="card">
-            <h2>Free now. Paid tier later.</h2>
-            <p class="muted">Free tier: intake to Starter Pack with Best Match, light matches, estimated value, and local status tracking. No login required.</p>
-            <p class="muted">Paid tier scaffold: account login and full dashboard are UI-only/local mockups. Paid tier launching soon - join the waitlist. No payment is requested or processed.</p>
-            <div class="grid cols2">
-              <input id="mockEmail" type="email" placeholder="Email for waitlist" aria-label="Waitlist email" />
-              <input id="mockPassword" type="password" placeholder="Password (mock only)" aria-label="Mock password" />
-            </div>
-            <button class="btn secondary" id="waitlistBtn" type="button" style="margin-top:12px">Join paid-tier waitlist</button>
-            <p id="waitlistMsg" class="small muted" style="margin-top:10px"></p>
+          <div class="quiet-panel">
+            <h2>What you receive in the beta</h2>
+            <p class="muted">A free Starter Pack with one prepared Best Match, additional visible beta matches, estimated award range, and local status tracking.</p>
+            <p class="muted">No account, payment, live email, database, or external analytics service is active.</p>
           </div>
-          <div class="card">
+          <div class="quiet-panel">
             <h3>Safe by design</h3>
             <ul>
               <li>Scholarship links point to official or public source pages.</li>
@@ -198,7 +291,7 @@
         <div class="card"><h2>Privacy</h2><p>We collect only what you enter into the intake: email, student first name or initials, age, grade, county, optional GPA range, activities, goals, and school. In this local beta, your information is saved in your browser's local storage. To delete it, clear this site's browser storage or email <b>MxJarvis.builds@gmail.com</b>.</p><p>We do not sell your information. California residents may request deletion by emailing <b>MxJarvis.builds@gmail.com</b>.</p></div>
         <div class="card"><h2>Terms</h2><p>This free tool recommends scholarships and helps prepare applications. It does not guarantee scholarships, awards, admissions, financial aid, or outcomes. Families verify each official source page before applying and submit applications only through official scholarship portals.</p></div>
         <div class="card"><h2>Support</h2><p>Email <b>MxJarvis.builds@gmail.com</b> for deletion requests, corrections, or source issues. Include the scholarship name and official URL when reporting a data issue.</p></div>
-        <div class="card"><h2>Beta notes</h2><ul><li>This beta is free.</li><li>Information is saved in this browser's local storage.</li><li>Paid account, auth, payment, email, analytics, and database services are not live.</li><li>Families verify official source pages before applying.</li></ul></div>
+        <div class="card"><h2>Beta notes</h2><ul><li>This beta is free.</li><li>Information is saved in this browser's local storage.</li><li>Account, auth, payment, email, analytics, and database services are not live.</li><li>Families verify official source pages before applying.</li></ul></div>
       </div>
     </section>
     <section id="templates" class="view hidden"><div id="templatesOutput" class="grid cols2"></div></section>
@@ -211,7 +304,7 @@
       <div class="footer-grid">
         <div><div class="footer-label">Free beta trust notes</div><p>Verify official deadlines and eligibility on official scholarship pages. Submit applications only through official scholarship portals.</p></div>
         <div><div class="footer-label">Support</div><p>MxJarvis.builds@gmail.com</p></div>
-        <div><div class="footer-label">Region</div><p>Sacramento / Placer local core with a wider public database to explore.</p></div>
+        <div><div class="footer-label">Region</div><p>Sacramento / Placer local core with wider public scholarship leads to verify carefully.</p></div>
       </div>
       <div class="legal-note">(c) 2026 Scholarship Starter Pack free beta. We do not sell user data. Contact MxJarvis.builds@gmail.com to request deletion.</div>
     </div>
@@ -263,9 +356,9 @@
       const model=ScholarshipStarter.makeDashboardModel(report,statuses);
       const filters = ['All','Local Sacramento + Placer','California','National','No-Essay','By Major'];
       const filtered = ScholarshipStarter.filterBrowseMatches(model.browseMatches, browseFilter);
-      out.innerHTML=`<div class="card"><h2>Dashboard</h2>${valueBlock()}<div class="progressbar"><span style="width:${model.progressPercent}%"></span></div><p><b>${model.progressPercent}% Top Matches checklist progress</b></p><p class="muted">Local beta session: ${esc(report.account.email)}. Free data is local to this browser; paid cross-device account is waitlist-only for now.</p></div>
+      out.innerHTML=`<div class="card"><h2>Dashboard</h2>${valueBlock()}<div class="progressbar"><span style="width:${model.progressPercent}%"></span></div><p><b>${model.progressPercent}% Top Matches checklist progress</b></p><p class="muted">Local beta session: ${esc(report.account.email)}. Free data is local to this browser; cross-device accounts are not live in this beta.</p></div>
       <div class="dashboard-tabs no-print"><button type="button" class="subtab ${dashboardTab==='top'?'active':''}" data-dash-tab="top">Your Top Matches</button><button type="button" class="subtab ${dashboardTab==='browse'?'active':''}" data-dash-tab="browse">Browse All</button></div>
-      <div id="topPanel" class="${dashboardTab==='top'?'':'hidden'}"><div class="card"><h2>Your Top Matches</h2><p class="muted">AI-prioritized Tier A list with prepared packets: fit rationale, essay starter, timeline, requirements, and checklist.</p></div><div class="grid">${model.topMatches.map(m=>scholarshipCard(m,'top')).join('')}</div></div>
+      <div id="topPanel" class="${dashboardTab==='top'?'':'hidden'}"><div class="card"><h2>Your Top Matches</h2><p class="muted">Priority list with prepared packets: fit rationale, essay starter, timeline, requirements, and checklist.</p></div><div class="grid">${model.topMatches.map(m=>scholarshipCard(m,'top')).join('')}</div></div>
       <div id="browsePanel" class="${dashboardTab==='browse'?'':'hidden'}"><div class="card"><h2>Browse All</h2><p class="muted">These are scholarships you may qualify for. We have prepared full plans for your top matches in the other tab. Browse here to find more on your own.</p><p class="notice">Wider Scholarship Database - verify each before applying.</p><div class="filter-row no-print">${filters.map(f=>`<button type="button" class="filter-chip ${browseFilter===f?'active':''}" data-filter="${esc(f)}">${esc(f)}</button>`).join('')}</div></div><div class="grid">${filtered.map(m=>scholarshipCard(m,'browse')).join('')}</div></div>`;
       bindDashboard();
     }
@@ -303,6 +396,7 @@
     function renderTemplates(){ const out=$('#templatesOutput'); out.innerHTML=Object.entries(ScholarshipStarter.PACKET_TEMPLATES).map(([name,items])=>`<div class="card"><h3>${esc(name.replace(/([A-Z])/g,' $1'))}</h3><ul>${items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>`).join(''); }
     function renderDebug(){ const out=$('#debugOutput'); out.innerHTML=`<div class="card"><h3>Local email queue placeholder</h3><pre>${esc(JSON.stringify(ScholarshipStarter.loadLocal('ssp_email_queue', []), null, 2))}</pre></div><div class="card"><h3>Local analytics events</h3><pre>${esc(JSON.stringify(ScholarshipStarter.loadLocal('ssp_analytics_events', []), null, 2))}</pre></div>`; }
     function renderAwardsTracker(){
+      if(!$('#heroAwardTracker') || !$('#heroAwardsFeed')) return;
       const awards = ScholarshipStarter.loadLocal('ssp_awards', []);
       const total = awards.reduce((sum,a)=>sum + Number(a.amount || 0), 0);
       $('#heroAwardTracker').innerHTML = `<span class="eyebrow" style="color:#7f2119">Sacramento Beta Awards Tracker</span><strong>${money(total)} awarded so far</strong><span class="muted">Sacramento Beta</span>`;
@@ -319,7 +413,7 @@
       renderAll();
       document.addEventListener('click', (e)=>{ const tab=e.target.closest('[data-view]'); if(tab){ e.preventDefault(); switchView(tab.dataset.view); return; } const demo=e.target.closest('#demoLink,[href="#demo"]'); if(demo){ e.preventDefault(); loadDemo(); } });
       $('#intakeForm').addEventListener('submit',(e)=>{ e.preventDefault(); createReport(formToStudent()); dashboardTab='top'; switchView('report'); });
-      $('#waitlistBtn').addEventListener('click',()=>{ const email=$('#mockEmail').value.trim(); const intent=ScholarshipStarter.createUpgradeIntent('paid-dashboard', email); ScholarshipStarter.saveLocal('ssp_waitlist_intent', intent); $('#waitlistMsg').textContent='Saved locally for the beta waitlist. No payment was requested or processed.'; track('waitlist_joined',{emailPresent:!!email}); });
+      $('#waitlistBtn')?.addEventListener('click',()=>{ const email=$('#mockEmail')?.value.trim() || ''; const intent=ScholarshipStarter.createUpgradeIntent('paid-dashboard', email); ScholarshipStarter.saveLocal('ssp_waitlist_intent', intent); if($('#waitlistMsg')) $('#waitlistMsg').textContent='Saved locally for future-account interest. No payment was requested or processed.'; track('waitlist_joined',{emailPresent:!!email}); });
       const initial=location.hash.replace('#',''); switchView(initial || (params.get('debug') === 'true' ? 'debug' : 'intake'));
       window.addEventListener('hashchange',()=>switchView(location.hash.replace('#','') || 'intake'));
     }

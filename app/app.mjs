@@ -103,7 +103,7 @@ const PACKET_TEMPLATES = {
   fullPacket: ['Fit rationale', 'Essay starter', 'Timeline', 'Requirements', 'Submission checklist', 'Official link verification'],
   applicationChecklist: ['Verify deadline on official page', 'Create account only on official scholarship site', 'Draft essays in a separate doc', 'Request recommendation', 'Review for accuracy', 'Submit before deadline', 'Save confirmation'],
   recommendationRequest: ['Ask 3-4 weeks before deadline', 'Give recommender resume + prompt + deadline', 'Share 2-3 traits to emphasize', 'Send polite reminder 7 days before due date'],
-  faq: ['Free Sacramento / Placer beta', 'No account needed for free packet', 'Paid tier is waitlist-only', 'No award guarantees', 'Submit applications only through official scholarship portals']
+  faq: ['Free Sacramento / Placer beta', 'No account needed for free packet', 'Future account features are not live', 'No award guarantees', 'Submit applications only through official scholarship portals']
 };
 
 const SAMPLE_STUDENT = { studentName:'Maya Alvarez', parentEmail:'maya.parent@example.test', studentAge:'17', grade:'12', gpa:'3.5-3.9', county:'Sacramento County', zip:'95819', school:'East Sacramento High School', activities:'Saturday food bank volunteer, founder of a peer tutoring circle, part-time barista, first chair clarinet, and senior class service chair', priorityThemes:'service, first-gen, local', majorCareer:'public health with a long-term goal of working in community clinics' };
