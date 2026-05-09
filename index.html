@@ -20,28 +20,28 @@
       --charcoal:#1d2521;
       --shadow:0 30px 90px rgba(42,35,27,.10);
       --soft-shadow:0 14px 36px rgba(42,35,27,.08);
-      --radius:10px;
+      --radius:4px;
       --max:1180px;
     }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; background:var(--ground); }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif; color:var(--ink); background:linear-gradient(180deg,#fffefa 0%,#f7f3eb 58%,#f3eee4 100%); line-height:1.58; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif; color:var(--ink); background:linear-gradient(180deg,#fffefa 0%,#f8f4ec 52%,#f1eadf 100%); line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
     a { color:var(--sage-dark); font-weight:720; text-underline-offset:3px; }
     .wrap { max-width:var(--max); margin:auto; padding:28px 24px; position:relative; }
     .site-top { position:absolute; top:0; left:0; right:0; z-index:30; background:transparent; }
     .topbar { min-height:92px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .brand,.top-links { background:rgba(255,253,250,.88); border:1px solid rgba(255,255,255,.36); box-shadow:0 18px 54px rgba(0,0,0,.16); backdrop-filter:saturate(150%) blur(18px); }
-    .brand { display:flex; align-items:center; gap:13px; color:var(--ink); text-decoration:none; border-radius:999px; padding:10px 16px 10px 10px; }
+    .brand,.top-links { background:rgba(255,253,250,.90); border:1px solid rgba(255,255,255,.38); box-shadow:0 18px 54px rgba(0,0,0,.14); backdrop-filter:saturate(150%) blur(18px); }
+    .brand { display:flex; align-items:center; gap:13px; color:var(--ink); text-decoration:none; border-radius:2px; padding:10px 16px 10px 10px; }
     .brand-mark { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:#fffefa; font-family:ui-serif,Georgia,"Times New Roman",serif; font-weight:720; font-size:12px; }
     .brand-name { display:block; font-family:ui-serif,Georgia,"Times New Roman",serif; font-size:1.04rem; line-height:1; font-weight:650; letter-spacing:-.01em; }
     .brand-sub { display:block; color:var(--muted); font-size:11px; margin-top:4px; font-weight:620; }
-    .top-links { display:flex; align-items:center; gap:8px; border-radius:999px; padding:8px; }
-    .top-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:680; opacity:.78; padding:10px 12px; border-radius:999px; }
+    .top-links { display:flex; align-items:center; gap:2px; border-radius:2px; padding:8px; }
+    .top-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:680; opacity:.78; padding:10px 12px; border-radius:2px; }
     .top-links a:hover { opacity:1; background:rgba(23,32,29,.06); }
     .top-links .donate { background:var(--clay); color:#fffefa; opacity:1; }
-    .hero { min-height:860px; color:white; background:linear-gradient(90deg,rgba(11,15,14,.70),rgba(11,15,14,.38) 48%,rgba(11,15,14,.10)), url('assets/graduation-hero.jpg') center/cover no-repeat; display:flex; align-items:end; overflow:hidden; }
+    .hero { min-height:860px; color:white; background:linear-gradient(90deg,rgba(11,15,14,.74),rgba(11,15,14,.38) 48%,rgba(11,15,14,.10)), url('assets/graduation-hero.jpg') center 42%/cover no-repeat; display:flex; align-items:end; overflow:hidden; }
     .hero .wrap { width:100%; padding-top:160px; padding-bottom:72px; }
-    .hero-grid { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:76px; align-items:end; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:96px; align-items:end; }
     .hero-copy { max-width:760px; animation:rise .75s ease both; }
     .hero .eyebrow,.hero h1,.hero .lead { color:white; text-shadow:0 2px 26px rgba(0,0,0,.22); }
     @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
@@ -52,37 +52,38 @@
     h3 { font-size:1.42rem; letter-spacing:-.025em; }
     h4 { font-family:inherit; font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; color:var(--clay); margin:18px 0 8px; }
     p { margin:0 0 14px; }
-    .lead { font-size:clamp(1.15rem,1.8vw,1.42rem); max-width:58ch; font-weight:430; margin-top:28px; }
+    .lead { font-size:clamp(1.13rem,1.7vw,1.34rem); max-width:55ch; font-weight:430; margin-top:28px; }
     .muted { color:var(--muted); }
     .small { font-size:13px; }
     .hero-actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:34px; }
     .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .btn { border:0; border-radius:999px; background:var(--ink); color:#fffefa; font-weight:760; padding:14px 22px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:50px; box-shadow:0 14px 34px rgba(23,32,29,.15); transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+    .btn { border:0; border-radius:2px; background:var(--ink); color:#fffefa; font-weight:760; padding:14px 22px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; min-height:50px; box-shadow:0 14px 34px rgba(23,32,29,.13); transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
     .btn::after { content:"↗"; margin-left:10px; font-weight:600; }
     .btn:hover { transform:translateY(-1px); box-shadow:0 20px 44px rgba(23,32,29,.18); background:#0f1513; }
     .btn.secondary,.btn.ghost { background:rgba(255,253,250,.82); color:var(--ink); border:1px solid rgba(23,32,29,.14); box-shadow:none; }
     .btn.green { background:var(--sage-dark); color:white; }
     .hero .btn.secondary { background:rgba(255,253,250,.88); }
-    .hero-note { animation:rise .85s .08s ease both; background:rgba(255,253,250,.86); color:var(--ink); border:1px solid rgba(255,255,255,.38); padding:28px; box-shadow:0 28px 80px rgba(0,0,0,.20); backdrop-filter:blur(16px); }
+    .hero-note { animation:rise .85s .08s ease both; background:rgba(255,253,250,.90); color:var(--ink); border-left:4px solid var(--gold); padding:30px 28px; box-shadow:0 28px 80px rgba(0,0,0,.16); backdrop-filter:blur(16px); }
     .hero-note h2 { font-size:2rem; margin-top:18px; }
     .metric { display:grid; gap:6px; padding:0; background:transparent; border:0; }
     .metric strong { font-family:ui-serif,Georgia,"Times New Roman",serif; font-weight:620; font-size:1.75rem; letter-spacing:-.03em; }
     .trust-line { margin-top:30px; display:flex; gap:24px; flex-wrap:wrap; color:rgba(255,255,255,.86); font-size:13px; font-weight:680; }
     .trust-line span { border-bottom:1px solid rgba(255,255,255,.38); padding-bottom:3px; }
-    .section { padding:132px 0; }
+    .section { padding:156px 0; }
     .section-head { max-width:860px; margin-bottom:42px; }
     .grid { display:grid; gap:18px; }
     .cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .cols4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
-    .editorial-split { display:grid; grid-template-columns:1.02fr .98fr; gap:70px; align-items:center; }
+    .editorial-split { display:grid; grid-template-columns:1.02fr .98fr; gap:92px; align-items:center; }
     .editorial-split.reverse { grid-template-columns:.98fr 1.02fr; }
-    .photo-panel { min-height:620px; background:center/cover no-repeat; position:relative; box-shadow:var(--shadow); overflow:hidden; }
-    .photo-panel::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.34)); }
+    .photo-panel { min-height:660px; background:center/cover no-repeat; position:relative; box-shadow:var(--shadow); overflow:hidden; }
+    .photo-panel::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 78% 18%,rgba(184,138,68,.18),transparent 36%); pointer-events:none; }
+    .photo-panel::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.42)); }
     .photo-panel.student { background-image:url('assets/student-story.jpg'); filter:sepia(.08) saturate(.92) contrast(.98); }
     .photo-panel.family { background-image:url('assets/family-guidance.jpg'); background-position:center 42%; filter:sepia(.06) saturate(.94) contrast(.98); }
-    .cinema-section { padding:150px 0 118px; }
-    .cinema-frame { min-height:620px; display:grid; align-items:end; background:linear-gradient(180deg,rgba(14,18,16,.04),rgba(14,18,16,.62)), url('assets/graduation-hero.jpg') center/cover no-repeat; color:white; box-shadow:var(--shadow); }
+    .cinema-section { padding:176px 0 132px; }
+    .cinema-frame { min-height:620px; display:grid; align-items:end; background:linear-gradient(180deg,rgba(14,18,16,.04),rgba(14,18,16,.62)), url('assets/student-story.jpg') center 54%/cover no-repeat; color:white; box-shadow:var(--shadow); }
     .cinema-copy { max-width:720px; padding:52px; }
     .cinema-copy .eyebrow,.cinema-copy h2,.cinema-copy p { color:white; text-shadow:0 2px 24px rgba(0,0,0,.22); }
     .cinema-copy p { font-size:clamp(1.05rem,1.7vw,1.28rem); max-width:54ch; }
@@ -90,19 +91,36 @@
     .editorial-note p { font-size:clamp(1.18rem,2vw,1.72rem); line-height:1.34; font-family:ui-serif,Georgia,'Times New Roman',serif; letter-spacing:-.025em; color:var(--ink); }
     .caption { position:absolute; left:24px; right:24px; bottom:22px; z-index:1; color:white; font-size:13px; font-weight:680; letter-spacing:.01em; }
     .storyline { display:grid; gap:0; border-top:1px solid var(--line); margin-top:28px; }
-    .story-row { display:grid; grid-template-columns:112px minmax(0,1fr); gap:48px; padding:34px 0; border-bottom:1px solid var(--line); }
+    .story-row { display:grid; grid-template-columns:112px minmax(0,1fr); gap:48px; padding:42px 0; border-bottom:1px solid var(--line); }
     .story-row .eyebrow { color:var(--gold); }
     .story-row p { max-width:640px; }
     .quote-band { margin:34px 0 0; padding:36px 0 0; border-top:1px solid var(--line); font-family:ui-serif,Georgia,"Times New Roman",serif; font-size:clamp(1.6rem,3vw,3.1rem); line-height:1.08; letter-spacing:-.035em; color:var(--ink); }
-    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin:0 0 34px; position:sticky; top:0; background:rgba(247,243,235,.9); backdrop-filter:saturate(160%) blur(18px); padding:15px 0; z-index:12; border-bottom:1px solid rgba(23,32,29,.08); }
-    .tab,.subtab,.filter-chip { border:1px solid rgba(23,32,29,.13); background:rgba(255,253,250,.68); color:var(--ink); border-radius:999px; padding:10px 14px; cursor:pointer; font-weight:740; }
-    .tab.active,.subtab.active,.filter-chip.active { background:var(--ink); color:white; border-color:var(--ink); }
+
+    .chapter-kicker { display:grid; grid-template-columns:260px minmax(0,1fr); gap:70px; align-items:end; margin-bottom:70px; }
+    .chapter-kicker p { font-size:clamp(1.06rem,1.55vw,1.26rem); max-width:58ch; }
+    .image-ledger { display:grid; grid-template-columns:1.15fr .85fr; gap:22px; align-items:stretch; }
+    .image-ledger figure { margin:0; min-height:520px; position:relative; background:center/cover no-repeat; overflow:hidden; box-shadow:var(--shadow); }
+    .image-ledger figure::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.46)); }
+    .image-ledger .secondary-stack { display:grid; gap:22px; }
+    .image-ledger .secondary-stack figure { min-height:249px; }
+    .image-ledger .grad { background-image:url('assets/graduation-hero.jpg'); background-position:center 46%; }
+    .image-ledger .student-mini { background-image:url('assets/student-story.jpg'); }
+    .image-ledger .family-mini { background-image:url('assets/family-guidance.jpg'); background-position:center 42%; }
+    .figcap { position:absolute; z-index:1; left:24px; right:24px; bottom:22px; color:white; font-weight:700; font-size:13px; letter-spacing:.01em; }
+    .process-band { margin-top:82px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .process-step { padding:34px 26px 38px; border-right:1px solid var(--line); }
+    .process-step:last-child { border-right:0; }
+    .process-step strong { display:block; font-family:ui-serif,Georgia,"Times New Roman",serif; font-size:2.4rem; font-weight:620; letter-spacing:-.04em; color:var(--clay); margin-bottom:18px; }
+    .process-step p { color:var(--muted); }
+    .tabs { display:flex; gap:0; flex-wrap:wrap; margin:0 0 46px; position:sticky; top:0; background:rgba(247,243,235,.92); backdrop-filter:saturate(160%) blur(18px); padding:18px 0; z-index:12; border-bottom:1px solid rgba(23,32,29,.10); }
+    .tab,.subtab,.filter-chip { border:0; border-bottom:2px solid rgba(23,32,29,.16); background:transparent; color:var(--ink); border-radius:0; padding:12px 16px; cursor:pointer; font-weight:740; }
+    .tab.active,.subtab.active,.filter-chip.active { background:transparent; color:var(--clay); border-color:var(--clay); }
     .view { padding:46px 0 82px; scroll-margin-top:100px; }
     #intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:100px; }
     .hidden { display:none !important; }
     .onboarding { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:54px; align-items:start; }
-    .panel,.card,.quiet-panel { background:rgba(255,253,250,.82); border:1px solid rgba(23,32,29,.10); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); color:var(--ink); backdrop-filter:blur(10px); }
-    .quiet-panel { box-shadow:none; background:rgba(255,253,250,.56); }
+    .panel,.card,.quiet-panel { background:rgba(255,253,250,.84); border:1px solid rgba(23,32,29,.10); border-radius:var(--radius); padding:34px; box-shadow:var(--soft-shadow); color:var(--ink); backdrop-filter:blur(10px); }
+    .quiet-panel { box-shadow:none; background:transparent; border-left:1px solid var(--line); border-top:0; border-right:0; border-bottom:0; }
     label { font-weight:760; font-size:14px; display:block; margin:14px 0 7px; }
     input,select,textarea { width:100%; border:1px solid rgba(23,32,29,.17); border-radius:8px; padding:13px 14px; font:inherit; background:rgba(255,253,250,.92); color:var(--ink); outline:none; transition:border-color .15s ease, box-shadow .15s ease; }
     input:focus,select:focus,textarea:focus { border-color:rgba(35,60,51,.58); box-shadow:0 0 0 4px rgba(95,116,106,.13); }
@@ -115,7 +133,7 @@
     .sch-card { display:grid; gap:12px; transition:transform .18s ease, box-shadow .18s ease; }
     .sch-card:hover { transform:translateY(-2px); box-shadow:0 24px 60px rgba(42,35,27,.12); }
     .sch-top { display:flex; justify-content:space-between; gap:16px; align-items:start; }
-    .tag { display:inline-flex; width:max-content; border-radius:999px; padding:5px 10px; font-size:12px; font-weight:800; background:#eee5d7; color:var(--sage-dark); }
+    .tag { display:inline-flex; width:max-content; border-radius:2px; padding:5px 9px; font-size:12px; font-weight:800; background:#eee5d7; color:var(--sage-dark); }
     .meta-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
     .meta { border:1px solid rgba(23,32,29,.1); border-radius:8px; padding:10px; background:#fbf8f1; min-width:0; }
     .meta span { display:block; color:var(--muted); font-size:11px; font-weight:850; text-transform:uppercase; letter-spacing:.04em; }
@@ -130,8 +148,8 @@
     .footer-label { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:#d8b56e; font-weight:850; margin-bottom:7px; }
     .legal-note { margin-top:22px; padding-top:16px; border-top:1px solid rgba(255,255,255,.14); font-size:12px; color:#cfc4b7; }
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
-    @media (max-width: 980px) { .cinema-frame { min-height:500px; } .cinema-copy { padding:34px; } .editorial-note { grid-template-columns:1fr; gap:12px; } .site-top { position:static; background:#fffefa; } .topbar { min-height:auto; align-items:flex-start; flex-direction:column; } .brand,.top-links { box-shadow:none; border-color:var(--line); } .top-links { width:100%; overflow:auto; } .hero { min-height:auto; } .hero .wrap { padding-top:76px; } .hero-grid,.editorial-split,.editorial-split.reverse,.onboarding,.story-row,.cols2,.cols3,.cols4,.footer-grid { grid-template-columns:1fr; } .hero-grid { gap:36px; } .photo-panel { min-height:430px; } .tabs { position:static; top:auto; margin-top:0; } .view,#intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:24px; } .meta-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .story-row { gap:10px; } }
-    @media (max-width: 620px) { .cinema-section { padding:82px 0 72px; } .cinema-frame { min-height:420px; } .cinema-copy { padding:26px; } .wrap { padding:22px 16px; } h1 { font-size:3.5rem; max-width:10ch; } h2 { font-size:2.25rem; } .hero .wrap { padding-top:54px; padding-bottom:48px; } .hero-actions { margin-top:24px; } .trust-line { gap:10px; display:grid; } .section { padding:72px 0; } .photo-panel { min-height:360px; } .btn { min-height:46px; padding:12px 17px; } input,select,textarea { font-size:16px; } .panel,.card,.quiet-panel { padding:22px; } .top-links { gap:4px; } .meta-row { grid-template-columns:1fr; } .sch-top { display:grid; } }
+    @media (max-width: 980px) { .chapter-kicker,.image-ledger,.process-band { grid-template-columns:1fr; } .process-step { border-right:0; border-bottom:1px solid var(--line); } .process-step:last-child { border-bottom:0; } .cinema-frame { min-height:500px; } .hero { background-position:56% top; } .cinema-copy { padding:34px; } .editorial-note { grid-template-columns:1fr; gap:12px; } .site-top { position:static; background:#fffefa; } .topbar { min-height:auto; align-items:flex-start; flex-direction:column; } .brand,.top-links { box-shadow:none; border-color:var(--line); } .top-links { width:100%; overflow:visible; flex-wrap:wrap; border-radius:20px; } .hero { min-height:auto; } .hero .wrap { padding-top:76px; } .hero-grid,.editorial-split,.editorial-split.reverse,.onboarding,.story-row,.cols2,.cols3,.cols4,.footer-grid { grid-template-columns:1fr; } .hero-grid { gap:36px; } .photo-panel { min-height:430px; } .tabs { position:static; top:auto; margin-top:0; } .view,#intake,#report,#dashboard,#trust,#templates,#debug,#different { scroll-margin-top:24px; } .meta-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .story-row { gap:10px; } }
+    @media (max-width: 620px) { .cinema-section { padding:82px 0 72px; } .hero { background-position:58% top; } .cinema-frame { min-height:420px; } .cinema-copy { padding:26px; } .wrap { padding:22px 16px; } h1 { font-size:3.5rem; max-width:10ch; } h2 { font-size:2.25rem; } .hero .wrap { padding-top:54px; padding-bottom:48px; } .hero-actions { margin-top:24px; } .trust-line { gap:10px; display:grid; } .section { padding:72px 0; } .photo-panel { min-height:360px; } .btn { min-height:46px; padding:12px 17px; } input,select,textarea { font-size:16px; } .panel,.card,.quiet-panel { padding:22px; } .top-links { gap:4px; } .top-links a { padding:9px 10px; font-size:12px; } .meta-row { grid-template-columns:1fr; } .sch-top { display:grid; } }
     @media print { .tabs,.dashboard-tabs,.filter-row,.no-print,.btn,header,.photo-panel { display:none!important; } body { background:white; } .card,.panel,.quiet-panel { box-shadow:none; break-inside:avoid; } a { color:#102033; } footer { display:none; } }
   </style>
 </head>
@@ -157,15 +175,15 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Free Sacramento / Placer beta</div>
-          <h1>A clearer first step toward scholarship season.</h1>
-          <p class="lead">Scholarship Starter Pack helps families turn a student’s real story into a focused local application plan, with official-source reminders and no promises about outcomes.</p>
+          <h1>A thoughtful path through scholarship season.</h1>
+          <p class="lead">A free Sacramento / Placer beta that turns a student’s story into a focused local application plan: one grounded first match, clear next steps, and official-source reminders.</p>
           <div class="hero-actions"><a href="#intake" class="btn">Begin the free intake</a><a href="#demo" class="btn secondary" id="demoLink">Preview the guidance</a></div>
           <div class="trust-line" aria-label="Beta trust notes"><span>Free beta</span><span>Sacramento / Placer focus</span><span>Verify official sources before applying</span><span>No outcome guarantees</span></div>
         </div>
         <div class="hero-note">
           <div class="metric" id="heroAwardTracker"><span class="eyebrow">Sacramento Beta Awards Tracker</span><strong>$0 awarded so far</strong><span class="muted">Recent shared awards appear here only when a user opts in.</span></div>
           <div id="heroAwardsFeed" class="grid" style="margin-top:14px"></div>
-          <h2>One best starting point. Clear next steps.</h2>
+          <h2>Quiet guidance for a high-stakes season.</h2>
           <p class="muted">The beta helps families prepare, organize, and verify before applying through official scholarship portals.</p>
         </div>
       </div>
@@ -173,8 +191,29 @@
   </header>
 
   <main class="wrap">
+
+    <section class="section" aria-label="Documentary scholarship story">
+      <div class="chapter-kicker">
+        <div><div class="eyebrow">Documentary rhythm</div><h2>Built around the real moment families are trying to reach.</h2></div>
+        <p class="muted">The redesign gives the product more room to breathe: fewer repeated containers, more image-led storytelling, and a calmer institutional cadence between guidance, action, and trust.</p>
+      </div>
+      <div class="image-ledger" aria-label="Cinematic student and family imagery">
+        <figure class="grad" role="img" aria-label="Graduates in caps and gowns walking together from behind in warm light"><figcaption class="figcap">A hopeful finish line, kept honest: preparation support without outcome promises.</figcaption></figure>
+        <div class="secondary-stack">
+          <figure class="student-mini" role="img" aria-label="Student working in a quiet academic setting"><figcaption class="figcap">Start with context, not a list.</figcaption></figure>
+          <figure class="family-mini" role="img" aria-label="Family reviewing education materials together"><figcaption class="figcap">Make the next step plain enough for a family evening.</figcaption></figure>
+        </div>
+      </div>
+      <div class="process-band" aria-label="Scholarship Starter Pack flow">
+        <div class="process-step"><strong>01</strong><h3>Listen</h3><p>Capture location, grade, interests, work, service, and responsibilities.</p></div>
+        <div class="process-step"><strong>02</strong><h3>Match</h3><p>Prepare one strong first scholarship path from the beta source set.</p></div>
+        <div class="process-step"><strong>03</strong><h3>Organize</h3><p>Turn deadlines, documents, and essays into a printable plan.</p></div>
+        <div class="process-step"><strong>04</strong><h3>Verify</h3><p>Send families back to official sources before they apply.</p></div>
+      </div>
+    </section>
+
     <section class="cinema-section" aria-label="Scholarship guidance story">
-      <div class="cinema-frame" role="img" aria-label="Graduates walking together beneath trees after commencement">
+      <div class="cinema-frame" role="img" aria-label="Students studying together in a library setting">
         <div class="cinema-copy">
           <div class="eyebrow">A human-centered scholarship path</div>
           <h2>Start with the student, not the spreadsheet.</h2>
@@ -183,7 +222,7 @@
       </div>
       <div class="editorial-note">
         <div class="eyebrow">Editorial guidance</div>
-        <p>Scholarship prep should feel less like a dashboard and more like a thoughtful advising session: calm, specific, and honest about what still needs to be verified.</p>
+        <p>Scholarship prep should feel like a thoughtful advising session: calm, specific, and honest about what still needs to be verified.</p>
       </div>
     </section>
 
@@ -227,7 +266,7 @@
     <section id="intake" class="view">
       <div class="onboarding">
         <form id="intakeForm" class="card">
-          <h2>Free guided intake</h2>
+          <div class="eyebrow">Begin the plan</div><h2>Free guided intake</h2>
           <p class="muted">No account is required. Your answers stay in this browser during the beta.</p>
           <label>Parent or student email for local dashboard access</label><input name="parentEmail" type="email" required placeholder="parent@example.com" />
           <label>Student first name or initials</label><input name="studentName" required placeholder="Maya or M.P." />
@@ -280,7 +319,7 @@
         <div><div class="footer-label">Support</div><p>MxJarvis.builds@gmail.com</p></div>
         <div><div class="footer-label">Region</div><p>Sacramento / Placer local core with wider public scholarship leads to verify carefully.</p></div>
       </div>
-      <div class="legal-note">(c) 2026 Scholarship Starter Pack free beta. We do not sell user data. Contact MxJarvis.builds@gmail.com to request deletion.</div>
+      <div class="legal-note">(c) 2026 Scholarship Starter Pack free beta. We do not sell user data. Contact MxJarvis.builds@gmail.com to request deletion. Photography uses local archival education imagery; Arlington State College Library photo via Wikimedia Commons / UTA Libraries, CC BY 4.0.</div>
     </div>
   </footer>
 
@@ -306,8 +345,8 @@
       return `<article class="card sch-card" data-scholarship="${esc(item.scholarshipId || item.id)}">
         <div class="sch-top"><div><span class="tag">${esc(item.priority || item.scope)}</span><h3>${esc(item.name)}</h3><p class="muted"><b>${esc(item.provider)}</b></p></div><select class="statusSelect" aria-label="Status for ${esc(item.name)}">${statusOptions}</select></div>
         <div class="meta-row"><div class="meta"><span>Education Level</span><b>${esc(item.educationLevel)}</b></div><div class="meta"><span>Amount</span><b>${esc(item.amount || item.awardRange)}</b></div><div class="meta"><span>Deadline</span><b>${esc(item.deadlineUrgency || item.deadline)}</b></div><div class="meta"><span>Status</span><b>${esc(item.status)}</b></div></div>
-        <p>${esc(item.description || item.fitRationale).slice(0, 220)}</p>
-        ${mode === 'top' ? `<p><b>Why it fits:</b> ${esc(item.fitRationale)}</p><h4>Checklist</h4>${(item.checklist || []).slice(0,4).map(c=>`<label class="small"><input class="check" type="checkbox" value="${esc(c.label)}" ${c.done?'checked':''} style="width:auto;margin-right:7px">${esc(c.label)}</label>`).join('')}` : `<p class="small muted">Wider Scholarship Database - verify each before applying.</p>`}
+        <p>${esc(item.description || item.fitRationale).slice(0, 150)}</p>
+        ${mode === 'top' ? `<p><b>Why it fits:</b> ${esc(item.fitRationale)}</p><h4>Checklist</h4>${(item.checklist || []).slice(0,3).map(c=>`<label class="small"><input class="check" type="checkbox" value="${esc(c.label)}" ${c.done?'checked':''} style="width:auto;margin-right:7px">${esc(c.label)}</label>`).join('')}` : `<p class="small muted">Wider Scholarship Database - verify each before applying.</p>`}
         <div class="actions"><a class="btn ${mode === 'top' ? '' : 'secondary'}" href="${esc(item.link)}" target="_blank" rel="noreferrer">${action}</a></div>
       </article>`;
     }
@@ -332,8 +371,8 @@
       const filtered = ScholarshipStarter.filterBrowseMatches(model.browseMatches, browseFilter);
       out.innerHTML=`<div class="card"><h2>Dashboard</h2>${valueBlock()}<div class="progressbar"><span style="width:${model.progressPercent}%"></span></div><p><b>${model.progressPercent}% Top Matches checklist progress</b></p><p class="muted">Local beta session: ${esc(report.account.email)}. Free data is local to this browser; cross-device accounts are not live in this beta.</p></div>
       <div class="dashboard-tabs no-print"><button type="button" class="subtab ${dashboardTab==='top'?'active':''}" data-dash-tab="top">Your Top Matches</button><button type="button" class="subtab ${dashboardTab==='browse'?'active':''}" data-dash-tab="browse">Browse All</button></div>
-      <div id="topPanel" class="${dashboardTab==='top'?'':'hidden'}"><div class="card"><h2>Your Top Matches</h2><p class="muted">Priority list with prepared packets: fit rationale, essay starter, timeline, requirements, and checklist.</p></div><div class="grid">${model.topMatches.map(m=>scholarshipCard(m,'top')).join('')}</div></div>
-      <div id="browsePanel" class="${dashboardTab==='browse'?'':'hidden'}"><div class="card"><h2>Browse All</h2><p class="muted">These are scholarships you may qualify for. We have prepared full plans for your top matches in the other tab. Browse here to find more on your own.</p><p class="notice">Wider Scholarship Database - verify each before applying.</p><div class="filter-row no-print">${filters.map(f=>`<button type="button" class="filter-chip ${browseFilter===f?'active':''}" data-filter="${esc(f)}">${esc(f)}</button>`).join('')}</div></div><div class="grid">${filtered.map(m=>scholarshipCard(m,'browse')).join('')}</div></div>`;
+      <div id="topPanel" class="${dashboardTab==='top'?'':'hidden'}"><div class="card"><h2>Your Top Matches</h2><p class="muted">Priority list with fit rationale, next steps, and checklist.</p></div><div class="grid">${model.topMatches.map(m=>scholarshipCard(m,'top')).join('')}</div></div>
+      <div id="browsePanel" class="${dashboardTab==='browse'?'':'hidden'}"><div class="card"><h2>Browse All</h2><p class="muted">Visible beta leads to review after your top matches.</p><p class="notice">Wider Scholarship Database - verify each before applying.</p><div class="filter-row no-print">${filters.map(f=>`<button type="button" class="filter-chip ${browseFilter===f?'active':''}" data-filter="${esc(f)}">${esc(f)}</button>`).join('')}</div></div><div class="grid">${filtered.map(m=>scholarshipCard(m,'browse')).join('')}</div></div>`;
       bindDashboard();
     }
     function saveAward(id, status){
